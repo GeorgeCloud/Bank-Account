@@ -1,7 +1,6 @@
 from random import randint
 bank_accounts = []
 
-
 class BankAccount:
     def __init__(self, full_name):
         self.full_name      = full_name
@@ -14,6 +13,17 @@ class BankAccount:
         Account No.: {''.join(["*", "*", "*", "*"] + list(str(self.account_number))[:4])}
         Balance: {self.balance}
         '''
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f'Amount deposited: ${amount} new balance: ${self.balance}')
+
+    def get_balance(self):
+        return self.balance
+
+    def add_interest(self):
+        self.balance += self.balance * 0.00083
+
 
 george_account = BankAccount('George Ceja')
 
