@@ -18,6 +18,17 @@ class BankAccount:
         self.balance += amount
         print(f'Amount deposited: ${amount} new balance: ${self.balance}')
 
+    def withdraw(self, amount):
+        print(f'Amount withdrawn: ${amount}')
+        self.balance -= amount
+
+        if amount > self.balance:
+            self.balance -= 25
+            print('Overdraft fee of $25')
+            print(f'new balance: -${abs(self.balance)}')
+        else:
+            print(f'new balance: ${self.balance}')
+
     def get_balance(self):
         return self.balance
 
