@@ -22,7 +22,7 @@ class BankAccount:
         print(f'Amount withdrawn: ${amount}')
         self.balance -= amount
 
-        if amount > self.balance:
+        if 0 > self.balance:
             self.balance -= 25
             print('Overdraft fee of $25')
             print(f'new balance: -${abs(self.balance)}')
@@ -39,3 +39,10 @@ class BankAccount:
 george_account = BankAccount('George Ceja')
 
 print(george_account)
+george_account.deposit(10)
+george_account.withdraw(10.1)
+# george_account.deposit(400)
+# george_account.withdraw(401)
+# print("Current Balance:", george_account.get_balance())
+# george_account.add_interest()
+# print("Current Balance:", george_account.get_balance())
